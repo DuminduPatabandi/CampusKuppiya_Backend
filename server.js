@@ -25,10 +25,15 @@ const connect = async () => {
     }
 }
 
+// const corsOptions = {
+//   origin: 'http://localhost:5173',
+//   credentials: true
+// };
 const corsOptions = {
-  origin: 'http://localhost:5173',
+  origin: 'https://campuskuppi.netlify.app/',
   credentials: true
 };
+
 
 app.use(cors(corsOptions));
 app.use(express.json())
