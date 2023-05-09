@@ -30,7 +30,7 @@ const connect = async () => {
 //   credentials: true
 // };
 const corsOptions = {
-  origin: 'https://campuskuppi.netlify.app/',
+  origin: 'https://campuskuppi.netlify.app',
   credentials: true
 };
 
