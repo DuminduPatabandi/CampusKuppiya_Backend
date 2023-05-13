@@ -25,14 +25,14 @@ const connect = async () => {
     }
 }
 
-// const corsOptions = {
-//   origin: 'http://localhost:5173',
-//   credentials: true
-// };
 const corsOptions = {
-  origin: 'https://campuskuppi.netlify.app',
+  origin: 'http://localhost:5173',
   credentials: true
 };
+// const corsOptions = {
+//   origin: 'https://campuskuppi.netlify.app',
+//   credentials: true
+// };
 
 
 app.use(cors(corsOptions));
@@ -54,12 +54,13 @@ app.use((err, req, res, next) => {
   return res.status(errorStatus).send(errorMessage);
 });
 
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-    connect()
-    console.log("Backend server is running")
-})
-// app.listen(3000, () => {
+// const port = process.env.PORT || 3000;
+// app.listen(port, () => {
 //     connect()
 //     console.log("Backend server is running")
 // })
+
+app.listen(3000, () => {
+    connect()
+    console.log("Backend server is running")
+})
