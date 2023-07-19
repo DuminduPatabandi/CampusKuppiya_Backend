@@ -48,6 +48,11 @@ export const getGigs = async (req, res, next) => {
     ...(q.title && { title: q.title }),
     ...(q.search && { subject: { $regex: q.search, $options: "i" } }),
   };
+  
+  // if (q.subjects && Array.isArray(q.subjects)) {
+  //   filters.subject = { $in: q.subjects };
+  // }
+
   try {
     const gigs = await Gig.find(filters).sort({ [q.sort]: -1 });
     res.status(200).send(gigs);
